@@ -7,6 +7,14 @@ router.get('/helloWorld', function(req, res, next) {
   res.send('Hello World!');
 });
 
+
+router.get('/addContact/:firstName',function(req, res, next) {
+    var firstName =  req.params.firstName;
+    res.send('hello' + firstName);
+});
+
+
+
 router.get('/contacts',function(req, res, next) {
   var dataArray = [];
   dataArray.push(new User('1','1','1','1'));
@@ -15,6 +23,10 @@ router.get('/contacts',function(req, res, next) {
   dataArray.push(new User('4','4','4','4'));
   res.send(dataArray);
 });
+
+
+//  var queryData = url.parse(request.url, true).query;
+
 
 var Foo = function (name) { this.name = name; };
 
